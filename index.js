@@ -1,15 +1,8 @@
 function isPalindrome(word) {
-  console.log(`Original word: ${word}`)
   const reversedArray = []
-  for(const letter in word){
-    reversedArray.unshift(word[letter])
-  }
-  const reversedWord =  reversedArray.reduce((acc, item) => acc+item)
-  if(word === reversedWord)
-    return true
-  else{
-    return false
-  }
+  word.split('').forEach(letter => reversedArray.unshift(letter))
+  const reversedWord = reversedArray.reduce((acc, item) => acc+item)
+  return word === reversedWord ? true : false 
 }
 
 /* 
@@ -42,4 +35,4 @@ if (require.main === module) {
 
 module.exports = isPalindrome;
 
-console.log(isPalindrome('yuriy'))
+console.log(isPalindrome('abba'))
