@@ -34,5 +34,3 @@ if (require.main === module) {
 }
 
 module.exports = isPalindrome;
-
-console.log(isPalindrome('abba'))
