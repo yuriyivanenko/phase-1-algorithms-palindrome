@@ -1,6 +1,9 @@
 function isPalindrome(word) {
   const reversedArray = []
-  word.split('').forEach(letter => reversedArray.unshift(letter))
+  const wordArray = word.split('')
+  for(let i = wordArray.length -1; i >= 0; i--){
+    reversedArray.push(wordArray[i])
+  }
   const reversedWord = reversedArray.reduce((acc, item) => acc+item)
   return word === reversedWord ? true : false 
 }
