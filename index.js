@@ -1,15 +1,13 @@
 function isPalindrome(word) {
-  const reversedArray = []
   const wordArray = word.split('')
-  for(let i = wordArray.length -1; i >= 0; i--){
-    reversedArray.push(wordArray[i])
-  }
-  const reversedWord = reversedArray.reduce((acc, item) => acc+item)
-  return word === reversedWord ? true : false 
+  wordArray.reverse()
+  const reversedWord = wordArray.join("")
+  return word === reversedWord
 }
 
 /* 
   Add your pseudocode here
+  ORIGINAL PSEUDOCODE
   1. Take argument and save as variable AS IS
   2. Loop through string or convert string to an array of letters
     Loop from the end of the string or array to the front
@@ -19,9 +17,10 @@ function isPalindrome(word) {
 
 /*
   Add written explanation of your solution here
-  - We will reverse the string by looping through. Not sure yet if I can loop through
-  the string or convert to an array first. After reversing we will check to see if we 
-  match the original
+  Using JS methods: we will call split to take the word and return it as a new array
+  Then we will reverse that array destroying the original wordArray but that won't matter
+  We can take that reversed array and call join to save it as a new string.
+  Lastly return if a our word argument is equal to the reversedWord
 */
 
 // You can run `node index.js` to view these console logs
